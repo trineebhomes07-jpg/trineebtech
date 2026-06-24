@@ -1,0 +1,172 @@
+/* ============================================================
+   TRINEEB TECH – PORTFOLIO SECTION
+   ============================================================ */
+
+.portfolio {
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.portfolio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-accent);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  position: relative;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(184,164,122,0.35);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Image Area */
+.portfolio-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1810, #0d0d0b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-image-emoji {
+  font-size: 4rem;
+  opacity: 0.5;
+  transition: all var(--transition-slow);
+}
+
+.portfolio-card:hover .portfolio-image-emoji {
+  opacity: 0.8;
+  transform: scale(1.15);
+}
+
+.portfolio-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(184,164,122,0.25) 0%,
+    transparent 60%,
+    rgba(13,13,11,0.4) 100%
+  );
+}
+
+.portfolio-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: rgba(184,164,122,0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(184,164,122,0.35);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: var(--font-size-xs);
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* View Button */
+.portfolio-view-btn {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  opacity: 0;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: var(--text-white);
+  padding: 0.45rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-slow);
+  white-space: nowrap;
+}
+
+.portfolio-card:hover .portfolio-view-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Card Body */
+.portfolio-body {
+  padding: var(--space-lg);
+}
+
+.portfolio-industry {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.portfolio-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+  transition: color var(--transition-base);
+}
+
+.portfolio-card:hover .portfolio-body h3 {
+  color: var(--gold-dark);
+}
+
+.portfolio-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+}
+
+.portfolio-service-tag {
+  background: var(--bg-accent);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.portfolio-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  border-top: 1px solid var(--bg-accent);
+  padding-top: var(--space-sm);
+}
+
+.portfolio-result i {
+  color: var(--gold-primary);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}

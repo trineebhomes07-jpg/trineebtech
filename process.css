@@ -1,0 +1,143 @@
+/* ============================================================
+   TRINEEB TECH – PROCESS SECTION
+   ============================================================ */
+
+.process {
+  background: linear-gradient(
+    160deg,
+    #0d0d0b 0%,
+    #161410 40%,
+    #1c1810 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.process .section-label {
+  color: var(--gold-light);
+  background: rgba(184,164,122,0.1);
+  border-color: rgba(184,164,122,0.25);
+}
+
+.process .section-title {
+  color: var(--text-white);
+}
+
+.process .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184,164,122,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Timeline */
+.process-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: calc(12.5% + 28px);
+  right: calc(12.5% + 28px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-light), var(--gold-primary), var(--gold-dark));
+  z-index: 0;
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-number-wrapper {
+  position: relative;
+  margin-bottom: var(--space-lg);
+}
+
+.step-number {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  box-shadow: 0 0 0 6px rgba(184,164,122,0.15), var(--shadow-gold-sm);
+  transition: all var(--transition-slow);
+  cursor: default;
+}
+
+.process-step:hover .step-number {
+  box-shadow: 0 0 0 10px rgba(184,164,122,0.2), var(--shadow-gold);
+  transform: scale(1.08);
+}
+
+.step-icon {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-dark);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--gold-light);
+}
+
+.process-step h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+.process-step p {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .process-timeline::before {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+}

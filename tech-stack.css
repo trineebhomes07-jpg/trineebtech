@@ -1,0 +1,101 @@
+/* ============================================================
+   TRINEEB TECH – TECHNOLOGY STACK SECTION
+   ============================================================ */
+
+.tech-stack {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.stack-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.stack-category {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  transition: all var(--transition-slow);
+}
+
+.stack-category:hover {
+  border-color: rgba(184,164,122,0.30);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.stack-cat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.stack-cat-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.stack-cat-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}
+
+.stack-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-accent);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-slow);
+  cursor: default;
+}
+
+.stack-item:hover {
+  background: linear-gradient(135deg, rgba(184,164,122,0.1), rgba(184,164,122,0.05));
+  border-color: rgba(184,164,122,0.35);
+  color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.stack-item-icon {
+  font-size: 1.1rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .stack-items {
+    gap: 8px;
+  }
+
+  .stack-item {
+    font-size: var(--font-size-xs);
+    padding: 0.4rem 0.8rem;
+  }
+}
